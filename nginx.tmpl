@@ -303,7 +303,7 @@ server {
         
         resolver                 8.8.4.4 8.8.8.8  valid=300s;
 	resolver_timeout         10s;
-	ssl_stapling on;
+	ssl_stapling off;
 	{{ if (exists (printf "/etc/nginx/certs/%s.chain.pem" $cert)) }}
 	ssl_stapling_verify on;
 	ssl_trusted_certificate {{ printf "/etc/nginx/certs/%s.chain.pem" $cert }};
